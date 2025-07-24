@@ -1,10 +1,12 @@
-function createItem(name, price, quantity) {
+async function createItem(name, price, quantity) {
     return {
         name,
         price,
         quantity,
 
-        subtotal: () => price * quantity
+        subtotal: function() {
+            return this.price * this.quantity
+        }
     }
 }
 
